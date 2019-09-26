@@ -29,6 +29,7 @@ var wordAsArr = [];
 var dashesArray = [];
 
 //set up function to start the game
+// set up function to select a band from the array
 
 // set up a function to turn the word into a series of dashes
 
@@ -39,9 +40,23 @@ function startGame() {
 	wordPlace = Math.floor(Math.random() * bands.length);
 	currentWord = bands[bandSelection];		
 	guessesLeft = 6			
-	document.getElementById("currentWord").innerHTML = wordAsDashes;
+	document.getElementById("currentWord").innerHTML = wordDashes;
 	document.getElementById("guesses").innerHTML = "--";
 	document.getElementById("guess-count").innerHTML = guessesLeft;
 }
 
 
+//set up function to turn the word into a series of dashes
+
+// set up a function to turn the word into a series of dashes
+
+wordDashes = makeIntoDashes(currentWord);
+
+function makeIntoDashes(word) {
+    var dashes = "";
+    for (i = 0; i <word.length -1; i++) {
+        dashes += "_ ";
+    }
+    dashes += "_"
+    return dashes;
+    }
